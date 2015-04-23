@@ -10,6 +10,7 @@ package eric.yu.demo.proxy.dynamic;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
+//一个动态代理类可以代理任意多个目标类
 public class DynamicSubject implements InvocationHandler
 {
     private Object sub;

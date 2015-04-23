@@ -19,7 +19,9 @@ public class DynamicProxyClient
 
         InvocationHandler handler = new DynamicSubject(realSubject);
 
+        //一个动态代理类对应一个invocationhandler
 
+        //动态生成一个代理对象，实现了 interfaces 所指定的接口， 并在调用该对象方法的时候 转发给handler所对应的动态代理类
         Subject subject = (Subject) Proxy.newProxyInstance(handler.getClass().getClassLoader(),realSubject.getClass().getInterfaces(),handler);
 
         subject.requset();
