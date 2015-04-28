@@ -1,23 +1,20 @@
-package eric.yu.demo.decorator;
+package eric.yu.demo.factory;
 /*===========================================================================+
  |      Copyright (c) 2014 Oracle Corporation, Redwood Shores, CA, USA       |
  |                         All rights reserved.                              |
  +===========================================================================+
  |  HISTORY                                                                  |
- |           Created by lliyu on 4/24/2015  (lin.yu@oracle.com)              |
+ |           Created by lliyu on 4/28/2015  (lin.yu@oracle.com)              |
  +===========================================================================*/
 
-public abstract class Decorator implements Component
+public class Customer
 {
-    private Component component;
+    public static void main(String[] args)
+    {
+        Factory factory = new FactoryA();
+        factory.order("B");
 
-    public Decorator(Component component)
-    {
-        this.component = component;
-    }
-    @Override
-    public void doSomething()
-    {
-        component.doSomething();
+        Factory factory1 = new FactoryB();
+        factory1.order("B");
     }
 }

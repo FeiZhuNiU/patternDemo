@@ -13,6 +13,11 @@ public class IODemo
 {
     public static void main(String[] args) throws IOException
     {
+        OutputStream os = new FileOutputStream("d:/iotest.txt");
+
+        String str = "hello";
+        os.write(str.getBytes());
+        os.close();
 
     }
 }
