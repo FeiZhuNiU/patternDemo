@@ -1,20 +1,22 @@
-package eric.yu.demo.decorator;
+package eric.yu.demo.adapter;
 /*===========================================================================+
  |      Copyright (c) 2014 Oracle Corporation, Redwood Shores, CA, USA       |
  |                         All rights reserved.                              |
  +===========================================================================+
  |  HISTORY                                                                  |
- |           Created by lliyu on 4/24/2015  (lin.yu@oracle.com)              |
+ |           Created by lliyu on 4/29/2015  (lin.yu@oracle.com)              |
  +===========================================================================*/
 
-public abstract class Decorator implements Component
+public class Adapter implements Target
 {
-    protected Component component;
-
-    public Decorator(Component component)
+    Adaptee adaptee;
+    public Adapter(Adaptee adaptee)
     {
-        this.component = component;
+        this.adaptee = adaptee;
     }
     @Override
-    public abstract void doSomething();
+    public void request()
+    {
+        adaptee.myRequest();
+    }
 }

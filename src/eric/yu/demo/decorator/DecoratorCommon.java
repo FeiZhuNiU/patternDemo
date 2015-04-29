@@ -19,7 +19,7 @@ public abstract class DecoratorCommon extends Decorator
     @Override
     public void doSomething()
     {
-        super.doSomething();
+        component.doSomething();
         doAnotherThing();
     }
 }

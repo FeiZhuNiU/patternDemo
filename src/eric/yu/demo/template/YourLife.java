@@ -1,20 +1,29 @@
-package eric.yu.demo.decorator;
+package eric.yu.demo.template;
 /*===========================================================================+
  |      Copyright (c) 2014 Oracle Corporation, Redwood Shores, CA, USA       |
  |                         All rights reserved.                              |
  +===========================================================================+
  |  HISTORY                                                                  |
- |           Created by lliyu on 4/24/2015  (lin.yu@oracle.com)              |
+ |           Created by lliyu on 4/29/2015  (lin.yu@oracle.com)              |
  +===========================================================================*/
 
-public abstract class Decorator implements Component
+public class YourLife extends Life
 {
-    protected Component component;
-
-    public Decorator(Component component)
-    {
-        this.component = component;
-    }
     @Override
-    public abstract void doSomething();
+    protected void work()
+    {
+        System.out.println("has no work");
+    }
+
+    @Override
+    protected void marriage()
+    {
+        System.out.println("single");
+    }
+
+    @Override
+    protected void study()
+    {
+        System.out.println("no education background");
+    }
 }
