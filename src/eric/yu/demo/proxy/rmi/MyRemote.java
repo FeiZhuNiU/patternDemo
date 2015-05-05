@@ -1,18 +1,16 @@
-package eric.yu.demo.proxy.dynamic;
+package eric.yu.demo.proxy.rmi;
 /*===========================================================================+
  |      Copyright (c) 2014 Oracle Corporation, Redwood Shores, CA, USA       |
  |                         All rights reserved.                              |
  +===========================================================================+
  |  HISTORY                                                                  |
- |           Created by lliyu on 4/23/2015  (lin.yu@oracle.com)              |
+ |           Created by lliyu on 5/4/2015  (lin.yu@oracle.com)              |
  +===========================================================================*/
 
-public class RealSubject
-        implements Subject
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
+public interface MyRemote extends Remote
 {
-    @Override
-    public void request()
-    {
-        System.out.println("in real subject");
-    }
+    public String sayHello(String name) throws RemoteException;
 }

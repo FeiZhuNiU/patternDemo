@@ -9,5 +9,5 @@ package eric.yu.demo.proxy.dynamic;
 
 public interface Subject
 {
-    void requset();
+    void request();
 }

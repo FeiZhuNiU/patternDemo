@@ -1,18 +1,14 @@
-package eric.yu.demo.proxy.dynamic;
+package eric.yu.demo.demo;
 /*===========================================================================+
  |      Copyright (c) 2014 Oracle Corporation, Redwood Shores, CA, USA       |
  |                         All rights reserved.                              |
  +===========================================================================+
  |  HISTORY                                                                  |
- |           Created by lliyu on 4/23/2015  (lin.yu@oracle.com)              |
+ |           Created by lliyu on 5/5/2015  (lin.yu@oracle.com)              |
  +===========================================================================*/
 
-public class RealSubject
-        implements Subject
+public interface Observable
 {
-    @Override
-    public void request()
-    {
-        System.out.println("in real subject");
-    }
+    void addObserver(Observer observer);
+    void notifyObservers();
 }

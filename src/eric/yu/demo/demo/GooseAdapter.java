@@ -1,18 +1,37 @@
-package eric.yu.demo.proxy.dynamic;
+package eric.yu.demo.demo;
 /*===========================================================================+
  |      Copyright (c) 2014 Oracle Corporation, Redwood Shores, CA, USA       |
  |                         All rights reserved.                              |
  +===========================================================================+
  |  HISTORY                                                                  |
- |           Created by lliyu on 4/23/2015  (lin.yu@oracle.com)              |
+ |           Created by lliyu on 5/5/2015  (lin.yu@oracle.com)              |
  +===========================================================================*/
 
-public class RealSubject
-        implements Subject
+public class GooseAdapter
+        implements Quackable
 {
-    @Override
-    public void request()
+    private Goose goose;
+
+    public GooseAdapter(Goose goose)
     {
-        System.out.println("in real subject");
+        this.goose = goose;
+    }
+
+    @Override
+    public void quack()
+    {
+        goose.honk();
+    }
+
+    @Override
+    public void addObserver(Observer observer)
+    {
+
+    }
+
+    @Override
+    public void notifyObservers()
+    {
+
     }
 }
