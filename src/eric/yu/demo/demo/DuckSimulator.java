@@ -13,11 +13,11 @@ public class DuckSimulator
     {
         DuckSimulator duckSimulator = new DuckSimulator();
         AbstractDuckFactory factory = new DuckFactory();
-        AbstractGooseFactory factory1 = new GooseFactory();
-        duckSimulator.simulate(factory,factory1);
+        AbstractDuckFactory countFactory = new CountDuckFactory();
+        duckSimulator.simulate(countFactory);
     }
 
-    void simulate(AbstractDuckFactory factory , AbstractGooseFactory gooseFactory)
+    void simulate(AbstractDuckFactory factory)
     {
 
 
@@ -29,7 +29,7 @@ public class DuckSimulator
         Quackable redheadDuck = factory.createRedheadDuck();
         Quackable duckCall = factory.createDuckCall();
         Quackable rubberDuck = factory.createRubberDuck();
-        Quackable goose = new GooseAdapter(gooseFactory.createGoose());
+        Quackable goose = factory.createGoose();
 
 
         Flock flockOfDucks = new Flock();

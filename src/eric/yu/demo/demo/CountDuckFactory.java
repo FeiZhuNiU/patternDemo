@@ -7,36 +7,35 @@ package eric.yu.demo.demo;
  |           Created by lliyu on 5/5/2015  (lin.yu@oracle.com)              |
  +===========================================================================*/
 
-public class DuckFactory
-        extends AbstractDuckFactory
+public class CountDuckFactory extends AbstractDuckFactory
 {
     @Override
     Quackable createMallardDuck()
     {
-        return new MallardDuck();
+        return new QuackCountDecorator(new MallardDuck());
     }
 
     @Override
     Quackable createRedheadDuck()
     {
-        return new RedheadDuck();
+        return new QuackCountDecorator(new RedheadDuck());
     }
 
     @Override
     Quackable createDuckCall()
     {
-        return new DuckCall();
+        return new QuackCountDecorator(new DuckCall());
     }
 
     @Override
     Quackable createRubberDuck()
     {
-        return new RubberDuck();
+        return new QuackCountDecorator(new RubberDuck());
     }
 
     @Override
     Quackable createGoose()
     {
-        return new GooseAdapter(new Goose());
+        return new QuackCountDecorator(new GooseAdapter(new Goose()));
     }
 }

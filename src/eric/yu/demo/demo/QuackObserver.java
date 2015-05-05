@@ -12,6 +12,6 @@ public class QuackObserver implements Observer
     @Override
     public void update(Quackable duck)
     {
-        System.out.println(" +++ Quack Observer : " + duck + " just quacked ++++");
+        System.out.println(" ---> [Quack Observer : " + duck.getClass().getSimpleName() + " just quacked ]");
     }
 }
